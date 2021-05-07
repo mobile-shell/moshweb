@@ -339,26 +339,43 @@ packet loss) helps Iain Learmonth <a href="elevator.txt">escape from an elevator
     </div>
 
     <div class="span4" style="vertical-align: top;">
-      <h3 class="callout"><a href="https://www.debian.org"><img class="logo" src="debian.png" alt=""></a>Debian <small>squeeze-backports and later</small><br /></h3>
-            <pre>$ sudo apt-get install mosh</pre>
+      <h3 class="callout"><a href="https://www.centos.org"><img class="logo" src="centos.png" alt=""></a>CentOS <small> 5 or later with <a href="https://fedoraproject.org/wiki/EPEL">EPEL</a></small><br /></h3>
+      <pre># yum install mosh</pre>
     </div>
   </div>
   <div class="row">
     <div class="span4" style="vertical-align: top;">
+      <h3 class="callout"><a href="https://www.debian.org"><img class="logo" src="debian.png" alt=""></a>Debian <small>squeeze-backports and later</small><br /></h3>
+            <pre>$ sudo apt-get install mosh</pre>
+    </div>
+
+    <div class="span4" style="vertical-align: top;">
       <h3 class="callout"><a href="https://getfedora.org"><img class="logo" src="fedora.png" alt=""></a>Fedora <small>15 or later</small></h3>
             <pre>$ sudo dnf install mosh</pre>
     </div>
+
     <div class="span4" style="vertical-align: top;">
       <h3 class="callout"><a href="https://www.gentoo.org"><img class="logo" src="gentoo.png" alt=""></a> Gentoo</h3>
             <pre># emerge net-misc/mosh</pre>
       <br />
     </div>
+  </div>
+  <div class="row">
     <div class="span4" style="vertical-align: top;">
       <h3 class="callout"><a href="http://www.gnu.org/software/guix"><img class="logo" src="GuixSD-V.png" alt=""></a>GuixSD</h3>
             <pre>$ guix package -i mosh</pre>
       <p><small>Mosh is also available through Guix when installed on other Linux distributions.</small></p>
       <br />
     </div>
+
+    <div class="span4" style="vertical-align: top;">
+      <h3 class="callout"><a href="https://nixos.org"><img class="logo" src="nixos.png" alt=""></a>NixOS <small>16.09 or later</small></h3>
+      <pre><a href="https://nixos.org/nixos/options.html#programs.mosh">programs.mosh.enable</a> = true;</pre>
+      or
+      <pre>$ nix-env -i mosh</pre>
+      <p><small>Mosh is also available through Nix when installed on other Linux distributions.</small></p>
+    </div>
+
     <div class="span4" style="vertical-align: top;">
       <h3 class="callout"><a href="https://www.opensuse.org"><img class="logo" src="openSUSE.png" alt=""></a> openSUSE <small>12.3 or later</small></h3>
             <pre>$ sudo zypper in mosh</pre>
