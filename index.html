@@ -248,16 +248,16 @@ packet loss) helps Iain Learmonth <a href="elevator.txt">escape from an elevator
       <div class="prelike">Binary package: <a href="https://github.com/mobile-shell/mosh/releases/download/mosh-1.4.0/mosh-1.4.0.pkg"><img src="dmg.png" alt=""> mosh-1.4.0.pkg</a>.</div>
       <!-- <br />
       <div class="prelike">OS X 10.5&ndash;10.9: <a href="https://mosh.org/mosh-1.2.5-leopard.pkg"><img src="dmg.png" alt=""> mosh-1.2.5-leopard.pkg</a>.</div> -->
-      <p><small>This is a standalone OS X package that will work on any supported Macintosh.  However, if you are using a package manager such as Homebrew or MacPorts, we suggest using it to get Mosh, for better compatibility and automatic updates.</small></p>
+      <p><small>This is a standalone macOS package that will work on any supported Macintosh.  However, if you are using a package manager such as Homebrew or MacPorts, we suggest using it to get Mosh, for better compatibility and automatic updates.</small></p>
     </div>
 
     <div class="span4" style="vertical-align: top;">
-      <h3 class="callout"><a href="https://mxcl.github.io/homebrew/"><img class="logo" src="homebrew2.png" alt=""></a>Homebrew <small>OS X 10.5 or later</small></h3>
+      <h3 class="callout"><a href="https://mxcl.github.io/homebrew/"><img class="logo" src="homebrew2.png" alt=""></a>Homebrew <small>macOS 10.5 or later</small></h3>
             <pre>$ brew install mosh</pre>
       <br />
     </div>
     <div class="span4" style="vertical-align: top;">
-      <h3 class="callout"><a href="https://www.macports.org"><img class="logo" src="macports.png" alt=""></a>MacPorts <small>OS X 10.5 or later</small></h3>
+      <h3 class="callout"><a href="https://www.macports.org"><img class="logo" src="macports.png" alt=""></a>MacPorts <small>macOS 10.5 or later</small></h3>
             <pre>$ sudo port install mosh</pre>
       <br />
     </div>
@@ -459,7 +459,7 @@ $ make
               Note that <code>mosh-client</code> receives an AES session key as an environment
               variable.  If you are porting Mosh to a new operating system, please make sure that a
               running process's environment variables are not readable by other users.  We have
-              confirmed that this is the case on GNU/Linux, OS X, and FreeBSD.
+              confirmed that this is the case on GNU/Linux, macOS, and FreeBSD.
             </p>
       </div>
     </div>
@@ -664,14 +664,14 @@ in <a href="https://www.usenix.org/publications/login">USENIX
 <dl>
   <dt>Tricky unicode</dt>
 
-  <dd><p>Only Mosh and the OS X Terminal correctly handle a Unicode combining character in the first column.</p>
+  <dd><p>Only Mosh and the macOS Terminal correctly handle a Unicode combining character in the first column.</p>
     <div class="thumbs">
       <div class="row">
         <div class="span4"><img src="terminal-shots/firstcol-xterm.png.2.png" alt=""><br>xterm: circumflex on wrong letter.</div>
         <div class="span4"><img src="terminal-shots/firstcol-gnome.png.2.png" alt=""><br>GNOME Terminal: no circumflex at all.</div>
       </div>
       <div class="row">
-        <div class="span4"><img src="terminal-shots/firstcol-osx.png.2.png" alt=""><br>OS X Terminal.app gets it right.</div>
+        <div class="span4"><img src="terminal-shots/firstcol-osx.png.2.png" alt=""><br>macOS Terminal.app gets it right.</div>
         <div class="span4"><img src="terminal-shots/firstcol-mosh.png.2.png" alt=""><br>Mosh gets it right too.</div>
       </div>
     </div>
@@ -688,7 +688,7 @@ in <a href="https://www.usenix.org/publications/login">USENIX
         <div class="span4"><img src="terminal-shots/acs-gnome.png.2.png" alt=""><br>GNOME Terminal</div>
       </div>
       <div class="row">
-        <div class="span4"><img src="terminal-shots/acs-osx.png.2.png" alt=""><br>OS X Terminal.app</div>
+        <div class="span4"><img src="terminal-shots/acs-osx.png.2.png" alt=""><br>macOS Terminal.app</div>
         <div class="span4"><img src="terminal-shots/acs-mosh.png.2.png" alt=""><br>Mosh</div>
       </div>
     </div>
@@ -697,16 +697,16 @@ in <a href="https://www.usenix.org/publications/login">USENIX
   <dt>Evil escape sequences</dt>
 
   <dd><p>Only Mosh and GNOME Terminal have a defensible rendering when
-Unicode mixes with an ECMA-48/ANSI escape sequence. The OS X Terminal
+Unicode mixes with an ECMA-48/ANSI escape sequence. The macOS Terminal
 unwisely tries to normalize its input before the vt500 state machine,
 causing it to misinterpret and become unusable after receiving the
-following input!* (This also means the OS X Terminal's interpretation
+following input!* (This also means the macOS Terminal's interpretation
 of the incoming octet stream <strong>varies</strong> depending on how
 the incoming octets are split across TCP segments, because the
 normalization only looks ahead to available bytes.)</p>
 
 <p><small>* We earlier wrote that this misbehaving sequence "crashes"
-the OS X Terminal.app. This was mistaken&mdash;instead, Terminal.app
+the macOS Terminal.app. This was mistaken&mdash;instead, Terminal.app
 interprets the escape sequence as shutting off keyboard input, and
 because of an unrelated bug in Terminal.app, it is not possible for
 the user to restore keyboard input by resetting the terminal from the
@@ -718,7 +718,7 @@ menu.</small></p>
         <div class="span4"><img src="terminal-shots/unicode-and-escape-gnome.png.2.png" alt=""><br>GNOME Terminal's circumflex placement is defensible.</div>
       </div>
       <div class="row">
-        <div class="span4"><img src="terminal-shots/unicode-and-escape-osx.png.2.png" alt=""><br>OS X Terminal.app applies circumflex to part of escape sequence, then irretrievably shuts off keyboard input.</div>
+        <div class="span4"><img src="terminal-shots/unicode-and-escape-osx.png.2.png" alt=""><br>macOS Terminal.app applies circumflex to part of escape sequence, then irretrievably shuts off keyboard input.</div>
         <div class="span4"><img src="terminal-shots/unicode-and-escape-mosh.png.2.png" alt=""><br>Mosh gets this one right.</div>
       </div>
     </div>
@@ -730,7 +730,7 @@ menu.</small></p>
     the user is typing in an 8-bit character set or in UTF-8,
     because in canonical mode (i.e. "cooked" mode), the kernel
     needs to be able to delete a typed multibyte character
-    sequence from an input buffer.  On OS X and Linux, this is
+    sequence from an input buffer.  On macOS and Linux, this is
     done with the "IUTF8" termios flag.)
     (See <a href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=665757">diagnostic
         explaining the need for this flag.</a>)</p>
@@ -956,7 +956,7 @@ remote servers "feel" more like the local machine!</p>
   mosh (or at least mosh-server) is installed on the server you are
   trying to connect to.  Also, the server is expected to be available
   on your server's default login <code>PATH</code>, which is not
-  usually true on OS X and BSD servers, or if you install mosh-server
+  usually true on macOS and BSD servers, or if you install mosh-server
   in your home directory.  In these cases please see the "Server
   binary outside path" instructions in the Usage section,
   above.</p></dd>
@@ -1139,7 +1139,7 @@ server's IP address with "host remotehost".</p>
 
   <p>3. If all goes well, you should have a working Mosh connection. Information about where the process fails can help us debug why Mosh isn't working for you.</p>
 
-  <dt>Q: With the mosh-server on FreeBSD or OS X, I sometimes get weird color problems. What's wrong?</dt>
+  <dt>Q: With the mosh-server on FreeBSD or macOS, I sometimes get weird color problems. What's wrong?</dt>
 
   <dd><p>This <a href="https://github.com/keithw/mosh/pull/129">bug</a> is fixed in Mosh 1.2. Thanks to Ed Schouten and Peter Jeremy for tracking this down.</p></dd>
 
